@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Support Insight 2025 (TH/EN)</title>
+    <style>
+      :root {
+        --bg: #f8fafc;
+        --text: #0f172a;
+        --muted: #475569;
+        --card: #ffffff;
+        --shadow: 0 10px 25px rgba(2, 6, 23, 0.08);
+        --radius: 18px;
+
+        --rose-bg: #fff1f2;
+        --rose: #be123c;
+        --rose-border: #fb7185;
+
+        --emerald-bg: #ecfdf5;
+        --emerald: #065f46;
+
+        --border: #e2e8f0;
+
+        --btn: #0f172a;
+        --btnText: #fff;
+        --btnSoft: rgba(15, 23, 42, 0.06);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          "Noto Sans Thai", "Noto Sans", Arial, "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background: var(--bg);
+        color: var(--text);
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(10px);
+        background: rgba(248, 250, 252, 0.75);
+        border-bottom: 1px solid rgba(2, 6, 23, 0.06);
+      }
+      .topbarInner {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 12px 16px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+      .brand strong {
+        font-size: 14px;
+      }
+      .brand span {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .controls {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .seg {
+        display: flex;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.55);
+      }
+      .seg button {
+        appearance: none;
+        border: 0;
+        padding: 8px 12px;
+        font-size: 12px;
+        background: transparent;
+        cursor: pointer;
+        color: #334155;
+      }
+      .seg button.active {
+        background: var(--btn);
+        color: var(--btnText);
+      }
+
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 18px 28px 28px;
+        display: grid;
+        gap: 22px;
+      }
+
+      .title h1 {
+        margin: 0;
+        font-size: 32px;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+      }
+      .title p {
+        margin: 10px 0 0;
+        color: var(--muted);
+        font-size: 15px;
+      }
+
+      .pillRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .pill {
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.7);
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 12px;
+        color: #334155;
+      }
+
+      .card {
+        background: var(--card);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 22px;
+        border: 1px solid rgba(2, 6, 23, 0.06);
+      }
+      .card.rose {
+        background: var(--rose-bg);
+      }
+      .card.emerald {
+        background: var(--emerald-bg);
+      }
+
+      h2 {
+        margin: 0 0 14px;
+        font-size: 20px;
+        letter-spacing: -0.01em;
+      }
+      .subtle {
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 6px;
+      }
+
+      .grid-2 {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: 1fr;
+        align-items: center;
+      }
+      @media (min-width: 860px) {
+        .grid-2 {
+          grid-template-columns: 1.1fr 0.9fr;
+        }
+      }
+
+      .chartBox {
+        width: 100%;
+        height: 320px;
+        position: relative;
+      }
+      .chartBox.sm {
+        height: 260px;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 18px;
+        color: #334155;
+      }
+      li {
+        margin: 8px 0;
+      }
+
+      .flags {
+        display: grid;
+        gap: 14px;
+      }
+      .flagItem {
+        border-left: 4px solid var(--rose-border);
+        padding-left: 12px;
+        background: rgba(255, 255, 255, 0.55);
+        border-radius: 12px;
+        padding: 10px 12px;
+      }
+      .flagItem h3 {
+        margin: 0 0 6px;
+        font-size: 16px;
+        color: var(--rose);
+      }
+
+      .note {
+        font-size: 14px;
+        color: #334155;
+        line-height: 1.55;
+      }
+
+      footer {
+        color: var(--muted);
+        font-size: 12px;
+        padding: 6px 2px 20px;
+      }
+      code.k {
+        background: rgba(15, 23, 42, 0.06);
+        padding: 2px 6px;
+        border-radius: 8px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          "Liberation Mono", monospace;
+        font-size: 12px;
+      }
+
+      /* Language modal */
+      .modal {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        background: rgba(2, 6, 23, 0.55);
+        z-index: 100;
+        padding: 18px;
+      }
+      .modal.show {
+        display: flex;
+      }
+      .modalCard {
+        width: min(520px, 100%);
+        background: white;
+        border-radius: 22px;
+        box-shadow: 0 30px 60px rgba(2, 6, 23, 0.25);
+        padding: 18px;
+        border: 1px solid rgba(2, 6, 23, 0.08);
+      }
+      .modalCard h3 {
+        margin: 6px 4px 6px;
+        font-size: 18px;
+        letter-spacing: -0.01em;
+      }
+      .modalCard p {
+        margin: 0 4px 14px;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.45;
+      }
+      .langBtns {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr;
+      }
+      @media (min-width: 520px) {
+        .langBtns {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      .langBtn {
+        border: 1px solid var(--border);
+        background: var(--btnSoft);
+        border-radius: 16px;
+        padding: 14px 12px;
+        cursor: pointer;
+        text-align: left;
+        transition: transform 0.05s ease;
+      }
+      .langBtn:hover {
+        transform: translateY(-1px);
+      }
+      .langBtn strong {
+        display: block;
+        font-size: 14px;
+      }
+      .langBtn span {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+
+      .smallHint {
+        margin-top: 12px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- First time: language chooser -->
+    <div
+      class="modal"
+      id="langModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Language selection"
+    >
+      <div class="modalCard">
+        <h3 id="modalTitle">Choose a language / เลือกภาษา</h3>
+        <p id="modalDesc">You can switch later from the top right.</p>
+        <div class="langBtns">
+          <button class="langBtn" id="chooseTH" type="button">
+            <strong>ภาษาไทย (TH)</strong>
+            <span>ดูหน้า Report แบบภาษาไทย</span>
+          </button>
+          <button class="langBtn" id="chooseEN" type="button">
+            <strong>English (EN)</strong>
+            <span>View the report in English</span>
+          </button>
+        </div>
+        <div class="smallHint">
+          Tip: selection is saved in your browser (localStorage).
+        </div>
+      </div>
+    </div>
+
+    <header class="topbar">
+      <div class="topbarInner">
+        <div class="brand">
+          <strong>Support Insight</strong>
+          <span>2025 • TH / EN</span>
+        </div>
+
+        <div class="controls">
+          <div class="seg" aria-label="Language">
+            <button id="btnLangTH" type="button">TH</button>
+            <button id="btnLangEN" type="button">EN</button>
+          </div>
+
+          <div class="seg" aria-label="Top5 metric">
+            <button id="btnMetricInc" type="button">Incidents</button>
+            <button id="btnMetricUniq" type="button">Unique Issues</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <section class="title">
+        <h1 id="t_title"></h1>
+        <p id="t_subtitle"></p>
+        <div class="pillRow">
+          <span class="pill" id="t_pill_total"></span>
+          <span class="pill" id="t_pill_top5"></span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="t_top5_title"></h2>
+        <div class="chartBox">
+          <canvas id="barTop5" aria-label="Top 5 customers bar chart"></canvas>
+        </div>
+        <div class="subtle" id="t_top5_hint"></div>
+      </section>
+
+      <section class="card">
+        <h2 id="t_behavior_title"></h2>
+        <div class="grid-2">
+          <div class="chartBox sm">
+            <canvas
+              id="pieBehavior"
+              aria-label="Behavior distribution pie chart"
+            ></canvas>
+          </div>
+          <p class="note" id="t_behavior_note"></p>
+        </div>
+      </section>
+
+      <section class="card emerald">
+        <h2 id="t_healthy_title" style="color: var(--emerald)"></h2>
+        <ul id="healthyList"></ul>
+        <p class="subtle" id="t_healthy_note"></p>
+      </section>
+
+      <section class="card rose">
+        <h2 id="t_redflag_title" style="color: var(--rose)"></h2>
+        <div class="flags" id="redFlagList"></div>
+      </section>
+
+      <section class="card">
+        <h2 id="t_prevent_title"></h2>
+        <ul id="preventList"></ul>
+      </section>
+
+      <section class="card">
+        <h2 id="t_reality_title"></h2>
+        <ul id="realityList"></ul>
+      </section>
+
+      <footer>
+        <div id="t_footer1"></div>
+        <div style="margin-top: 6px" id="t_footer2"></div>
+      </footer>
+    </main>
+
+    <!-- Chart.js (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
+    <script>
+      // Data (same in TH/EN) - derived from the TSX files
+      const highCostCustomers = [
+        { customer: "CO00203", incidents: 200, uniqueIssues: 197 },
+        { customer: "CO00269", incidents: 184, uniqueIssues: 182 },
+        { customer: "CO00264", incidents: 78, uniqueIssues: 75 },
+        { customer: "CO00324", incidents: 64, uniqueIssues: 64 },
+        { customer: "CO00333", incidents: 54, uniqueIssues: 54 },
+      ];
+
+      const content = {
+        th: {
+          title: "ภาพรวม Support จากข้อมูลจริง (ปี 2025)",
+          subtitle:
+            "สะท้อนความจริงจาก Incident ที่เกิดขึ้นจริง เพื่อให้เห็นพฤติกรรมลูกค้าและภาระงานของทีม",
+          pill_total: "Incident ทั้งหมด: 1,187 เคส",
+          pill_top5: "Top 5 ลูกค้า: 580 เคส (~49%)",
+
+          top5_title: "ลูกค้าที่ใช้ทรัพยากร Support สูงสุด (Top 5)",
+          top5_hint_inc: "แกน X = รหัสลูกค้า, แกน Y = จำนวน Incident",
+          top5_hint_uniq:
+            "แกน X = รหัสลูกค้า, แกน Y = จำนวน Unique Issue (ปัญหาไม่ซ้ำ)",
+
+          metric_inc_label: "Incidents",
+          metric_uniq_label: "Unique Issues",
+
+          behavior_title: "สัดส่วนพฤติกรรมลูกค้า (จาก Incident ทั้งหมด)",
+          behavior_note:
+            "ลูกค้าเพียงไม่กี่รายสร้าง Incident เกือบครึ่งหนึ่งของระบบ สะท้อนพฤติกรรมการพึ่งพา Support ที่สูงผิดปกติ",
+          behavior_labels: ["พึ่งพา Support สูง", "ใช้งานได้ด้วยตนเอง"],
+          behavior_values: [49, 51],
+
+          healthy_title: "ตัวอย่างลูกค้าที่ใช้งานได้ดีจริง",
+          healthy_items: [
+            { customer: "C00122", incidents: 5, note: "เคสเฉพาะจุด ไม่ซ้ำ" },
+            { customer: "CO00186", incidents: 5, note: "ใช้งานได้เอง" },
+            { customer: "CO00256", incidents: 10, note: "ถามเป็นครั้งคราว" },
+            { customer: "CO00246", incidents: 10, note: "process ชัด" },
+            { customer: "CO00304", incidents: 10, note: "incident ต่อรายต่ำ" },
+          ],
+          healthy_note:
+            "ลูกค้ากลุ่มนี้สะท้อนว่า ระบบสามารถใช้งานได้จริงเมื่อ process และความเข้าใจถูกปิดตั้งแต่ต้น",
+
+          redflag_title: "ลูกค้าที่ควรจับตามองเป็นพิเศษ (Red Flag)",
+          redflag_items: [
+            {
+              customer: "CO00203",
+              flags: [
+                "Incident สูงมากและเกิดอย่างต่อเนื่อง",
+                "ปัญหาซ้ำในรูปแบบเดิม",
+                "ใช้ Support เป็นส่วนหนึ่งของการทำงานประจำ",
+              ],
+            },
+            {
+              customer: "CO00269",
+              flags: [
+                "ขอ confirm แทบทุกขั้นตอน",
+                "ไม่เห็น learning curve ชัดเจน",
+                "พึ่งพา Support สูง",
+              ],
+            },
+            {
+              customer: "CO00264",
+              flags: [
+                "ปัญหา logic / workflow ซ้ำ",
+                "ความเข้าใจไม่ปิดตั้งแต่ช่วง Implement",
+              ],
+            },
+            {
+              customer: "CO00324",
+              flags: [
+                "จำนวน Incident ไม่ลดลงตามเวลา",
+                "เป็น how-to มากกว่า bug ระบบ",
+              ],
+            },
+            {
+              customer: "CO00333",
+              flags: [
+                "Incident ต่อรายสูง",
+                "ใช้ Support แทนการตัดสินใจภายในองค์กร",
+              ],
+            },
+          ],
+
+          prevent_title: "แนวทางป้องกัน Red Flag ในอนาคต",
+          prevent_items: [
+            "ปิดความเข้าใจด้าน workflow และเหตุผล (why) ให้ครบในช่วง Implement",
+            "ใช้ Incident หลัง Go-live เป็น feedback บังคับกลับเข้า Implement checklist",
+            "กำหนดเส้นแบ่งชัดระหว่าง how-to กับปัญหาระบบตั้งแต่วันแรก",
+            "ติดตาม learning curve ของลูกค้า ไม่ใช่ดูแค่จำนวน Incident",
+          ],
+
+          reality_title: "สิ่งที่ข้อมูลสะท้อนความจริง",
+          reality_items: [
+            "ภาระ Support ไม่ได้กระจายเท่ากันทุกลูกค้า",
+            "พฤติกรรมลูกค้าถูกกำหนดตั้งแต่ช่วง Implement มากกว่าช่วง Support",
+            "Red Flag เกิดซ้ำได้ หากไม่จัดการที่ต้นเหตุ",
+          ],
+
+          footer1:
+            "Preview นี้แปลงจาก React/TSX (เดิมใช้ Recharts + shadcn/ui) มาเป็น HTML/CSS + Chart.js เพื่อเปิดดูได้ทันทีใน Browser",
+          footer2:
+            "ถ้าเครื่องไม่มีอินเทอร์เน็ต ให้ดาวน์โหลดไฟล์ Chart.js มาไว้ข้าง ๆ แล้วเปลี่ยน <code class='k'>src</code> ของสคริปต์ Chart.js เป็นไฟล์ local",
+          modalDesc: "เลือกภาษาได้เลย (สามารถสลับได้ภายหลังจากมุมขวาบน)",
+        },
+
+        en: {
+          title: "Support Overview Based on Real Data (2025)",
+          subtitle:
+            "A factual reflection of real incident data, highlighting customer behavior and its impact on Support workload",
+          pill_total: "Total incidents: 1,187",
+          pill_top5: "Top 5 customers: 580 (~49%)",
+
+          top5_title: "Top 5 Customers by Support Consumption",
+          top5_hint_inc: "X = Customer code, Y = Number of incidents",
+          top5_hint_uniq:
+            "X = Customer code, Y = Unique issues (non-repetitive)",
+
+          metric_inc_label: "Incidents",
+          metric_uniq_label: "Unique Issues",
+
+          behavior_title: "Customer Behavior Distribution (All Incidents)",
+          behavior_note:
+            "A small number of customers generate almost half of all incidents, indicating unusually high dependency on the Support team.",
+          behavior_labels: ["High Support Dependency", "Self-sufficient Usage"],
+          behavior_values: [49, 51],
+
+          healthy_title: "Examples of Healthy, Self-Sufficient Customers",
+          healthy_items: [
+            {
+              customer: "C00122",
+              incidents: 5,
+              note: "Isolated, non-repetitive cases",
+            },
+            {
+              customer: "CO00186",
+              incidents: 5,
+              note: "Able to operate independently",
+            },
+            {
+              customer: "CO00256",
+              incidents: 10,
+              note: "Occasional questions only",
+            },
+            {
+              customer: "CO00246",
+              incidents: 10,
+              note: "Clear and stable processes",
+            },
+            {
+              customer: "CO00304",
+              incidents: 10,
+              note: "Low incidents per customer",
+            },
+          ],
+          healthy_note:
+            "These customers demonstrate that the system can be used effectively when processes and understanding are properly closed during implementation.",
+
+          redflag_title: "Customers Requiring Close Attention (Red Flags)",
+          redflag_items: [
+            {
+              customer: "CO00203",
+              flags: [
+                "Very high and continuous incident volume",
+                "Repeated issues with similar patterns",
+                "Support used as part of daily operations",
+              ],
+            },
+            {
+              customer: "CO00269",
+              flags: [
+                "Requests confirmation at almost every step",
+                "No visible learning curve",
+                "High dependency on Support",
+              ],
+            },
+            {
+              customer: "CO00264",
+              flags: [
+                "Repeated logic / workflow issues",
+                "Understanding not fully closed during implementation",
+              ],
+            },
+            {
+              customer: "CO00324",
+              flags: [
+                "Incident volume does not decrease over time",
+                "Mostly how-to questions rather than system bugs",
+              ],
+            },
+            {
+              customer: "CO00333",
+              flags: [
+                "High incidents per customer",
+                "Support used instead of internal decision-making",
+              ],
+            },
+          ],
+
+          prevent_title: "Preventing Future Red Flags",
+          prevent_items: [
+            "Fully close workflow understanding and rationale (why) during implementation",
+            "Feed post–go-live incidents back into the implementation checklist",
+            "Clearly separate how-to support from real system issues from day one",
+            "Track customer learning curves, not just incident volume",
+          ],
+
+          reality_title: "What the Data Realistically Shows",
+          reality_items: [
+            "Support workload is not evenly distributed across customers",
+            "Customer behavior is shaped more by implementation than by support",
+            "Red flags will repeat if root causes are not addressed",
+          ],
+
+          footer1:
+            "This preview is converted from React/TSX (originally Recharts + shadcn/ui) to HTML/CSS + Chart.js for instant browser preview.",
+          footer2:
+            "If your machine is offline, download Chart.js locally and change the <code class='k'>src</code> to a local file.",
+          modalDesc:
+            "Pick a language (you can switch later from the top-right).",
+        },
+      };
+
+      // State
+      let lang = localStorage.getItem("support_insight_lang") || "";
+      let metric =
+        localStorage.getItem("support_insight_metric") || "incidents";
+
+      // Elements
+      const langModal = document.getElementById("langModal");
+      const chooseTH = document.getElementById("chooseTH");
+      const chooseEN = document.getElementById("chooseEN");
+      const btnLangTH = document.getElementById("btnLangTH");
+      const btnLangEN = document.getElementById("btnLangEN");
+      const btnMetricInc = document.getElementById("btnMetricInc");
+      const btnMetricUniq = document.getElementById("btnMetricUniq");
+
+      // Charts (created once, updated on render)
+      const barCtx = document.getElementById("barTop5");
+      const pieCtx = document.getElementById("pieBehavior");
+
+      const barChart = new Chart(barCtx, {
+        type: "bar",
+        data: {
+          labels: highCostCustomers.map((d) => d.customer),
+          datasets: [
+            {
+              label: "Incidents",
+              data: highCostCustomers.map((d) => d.incidents),
+              borderWidth: 0,
+              backgroundColor: "#6366f1", // indigo-500
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            tooltip: {
+              enabled: true,
+              callbacks: {
+                label: function (ctx) {
+                  const i = ctx.dataIndex;
+                  const d = highCostCustomers[i];
+                  const c = content[lang] || content.en;
+                  const primaryLabel =
+                    metric === "uniqueIssues"
+                      ? c.metric_uniq_label
+                      : c.metric_inc_label;
+                  const primaryVal =
+                    metric === "uniqueIssues" ? d.uniqueIssues : d.incidents;
+                  const secondaryLabel =
+                    metric === "uniqueIssues"
+                      ? c.metric_inc_label
+                      : c.metric_uniq_label;
+                  const secondaryVal =
+                    metric === "uniqueIssues" ? d.incidents : d.uniqueIssues;
+                  return [
+                    `${primaryLabel}: ${primaryVal}`,
+                    `${secondaryLabel}: ${secondaryVal}`,
+                  ];
+                },
+              },
+            },
+            legend: { display: false },
+          },
+          scales: {
+            x: { grid: { display: false } },
+            y: { beginAtZero: true },
+          },
+        },
+      });
+
+      const pieChart = new Chart(pieCtx, {
+        type: "pie",
+        data: {
+          labels: ["High Support Dependency", "Self-sufficient Usage"],
+          datasets: [
+            {
+              data: [49, 51],
+              backgroundColor: ["#ef4444", "#22c55e"],
+              borderColor: "rgba(255,255,255,.85)",
+              borderWidth: 2,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: "bottom" },
+            tooltip: { enabled: true },
+          },
+        },
+      });
+
+      function setActive(button, isActive) {
+        if (isActive) button.classList.add("active");
+        else button.classList.remove("active");
+      }
+
+      function render() {
+        const c = content[lang] || content.en;
+
+        // Texts
+        document.getElementById("t_title").textContent = c.title;
+        document.getElementById("t_subtitle").textContent = c.subtitle;
+        document.getElementById("t_pill_total").textContent = c.pill_total;
+        document.getElementById("t_pill_top5").textContent = c.pill_top5;
+
+        document.getElementById("t_top5_title").textContent = c.top5_title;
+        document.getElementById("t_top5_hint").textContent =
+          metric === "uniqueIssues" ? c.top5_hint_uniq : c.top5_hint_inc;
+
+        document.getElementById("t_behavior_title").textContent =
+          c.behavior_title;
+        document.getElementById("t_behavior_note").textContent =
+          c.behavior_note;
+
+        document.getElementById("t_healthy_title").textContent =
+          c.healthy_title;
+        document.getElementById("t_healthy_note").textContent = c.healthy_note;
+
+        document.getElementById("t_redflag_title").textContent =
+          c.redflag_title;
+
+        document.getElementById("t_prevent_title").textContent =
+          c.prevent_title;
+        document.getElementById("t_reality_title").textContent =
+          c.reality_title;
+
+        document.getElementById("t_footer1").textContent = c.footer1;
+        document.getElementById("t_footer2").innerHTML = c.footer2;
+
+        // Modal copy
+        document.getElementById("modalDesc").textContent =
+          c.modalDesc || "You can switch later from the top right.";
+
+        // Lists
+        const healthyList = document.getElementById("healthyList");
+        healthyList.innerHTML = "";
+        c.healthy_items.forEach((it) => {
+          const li = document.createElement("li");
+          li.innerHTML = `<strong>${it.customer}</strong> – ${it.note} (≈ ${
+            it.incidents
+          } ${lang === "th" ? "incident/ปี" : "incidents/year"})`;
+          healthyList.appendChild(li);
+        });
+
+        const redFlagList = document.getElementById("redFlagList");
+        redFlagList.innerHTML = "";
+        c.redflag_items.forEach((it) => {
+          const box = document.createElement("div");
+          box.className = "flagItem";
+          const h = document.createElement("h3");
+          h.textContent = it.customer;
+          const ul = document.createElement("ul");
+          it.flags.forEach((f) => {
+            const li = document.createElement("li");
+            li.textContent = f;
+            ul.appendChild(li);
+          });
+          box.appendChild(h);
+          box.appendChild(ul);
+          redFlagList.appendChild(box);
+        });
+
+        const preventList = document.getElementById("preventList");
+        preventList.innerHTML = "";
+        c.prevent_items.forEach((t) => {
+          const li = document.createElement("li");
+          li.textContent = t;
+          preventList.appendChild(li);
+        });
+
+        const realityList = document.getElementById("realityList");
+        realityList.innerHTML = "";
+        c.reality_items.forEach((t) => {
+          const li = document.createElement("li");
+          li.textContent = t;
+          realityList.appendChild(li);
+        });
+
+        // Controls active state
+        setActive(btnLangTH, lang === "th");
+        setActive(btnLangEN, lang === "en");
+        setActive(btnMetricInc, metric === "incidents");
+        setActive(btnMetricUniq, metric === "uniqueIssues");
+
+        // Update charts
+        barChart.data.datasets[0].label =
+          metric === "uniqueIssues" ? c.metric_uniq_label : c.metric_inc_label;
+        barChart.data.datasets[0].backgroundColor =
+          metric === "uniqueIssues" ? "#f97316" : "#6366f1"; // orange for unique, indigo for incidents
+        barChart.data.datasets[0].data = highCostCustomers.map((d) =>
+          metric === "uniqueIssues" ? d.uniqueIssues : d.incidents
+        );
+        barChart.update();
+
+        pieChart.data.labels = c.behavior_labels.slice();
+        pieChart.data.datasets[0].data = c.behavior_values.slice();
+        pieChart.data.datasets[0].backgroundColor = ["#ef4444", "#22c55e"];
+        pieChart.update();
+      }
+
+      function setLang(newLang) {
+        lang = newLang;
+        localStorage.setItem("support_insight_lang", lang);
+        langModal.classList.remove("show");
+        render();
+      }
+
+      function setMetric(newMetric) {
+        metric = newMetric;
+        localStorage.setItem("support_insight_metric", metric);
+        render();
+      }
+
+      // Wire controls
+      chooseTH.addEventListener("click", () => setLang("th"));
+      chooseEN.addEventListener("click", () => setLang("en"));
+      btnLangTH.addEventListener("click", () => setLang("th"));
+      btnLangEN.addEventListener("click", () => setLang("en"));
+      btnMetricInc.addEventListener("click", () => setMetric("incidents"));
+      btnMetricUniq.addEventListener("click", () => setMetric("uniqueIssues"));
+
+      // First load
+      if (!lang) {
+        // Default copy in bilingual
+        langModal.classList.add("show");
+        // Preselect EN as a fallback for JS init, but don't save until user chooses
+        lang = "en";
+        render();
+      } else {
+        render();
+      }
+    </script>
+  </body>
+</html>
